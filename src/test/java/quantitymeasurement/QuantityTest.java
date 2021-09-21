@@ -76,7 +76,7 @@ public class QuantityTest {
     }
 
     @Test
-    public void given1Feetand12Inch_WhenCompared_ShouldReturnEqual(){
+    public void given1Feetand12Inch_WhenCompared_ShouldReturnEqual() {
         Feet feet1 = new Feet(1.0);
         double actualResult = feet1.feetToInchConversion();
         double expectedResult = 12;
@@ -84,10 +84,58 @@ public class QuantityTest {
     }
 
     @Test
-    public void given2Feetand12Inch_WhenCompared_ShouldReturnNotEqual(){
+    public void given2Feetand12Inch_WhenCompared_ShouldReturnNotEqual() {
         Feet feet1 = new Feet(2.0);
         double actualResult = feet1.feetToInchConversion();
         double expectedResult = 12;
         Assertions.assertNotEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void given3Feetand1Yard_WhenCompared_ShouldReturnEqual() {
+        Feet feet = new Feet(3.0);
+        double actualResult = feet.feetToYardConversion();
+        double expectedResult = 1;
+        Assertions.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void given1Feetand1Yard_WhenCompared_ShouldReturnNotEqual() {
+        Feet feet = new Feet(1.0);
+        double actualResult = feet.feetToYardConversion();
+        double expectedResult = 1;
+        Assertions.assertNotEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void given1Inchand1Yard_WhenCompared_ShouldReturnNotEqual() {
+        Inch inch = new Inch(1.0);
+        double actualResult = inch.inchToYardConversion();
+        double expectedResult = 1;
+        Assertions.assertNotEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void given1Yardand36Inch_WhenCompared_ShouldReturnEqual() {
+        Yard yard = new Yard(1.0);
+        double actualResult = yard.yardToInchConversion();
+        double expectedResult = 36;
+        Assertions.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void given36Inchand1Yard_WhenCompared_ShouldReturnEqual() {
+        Inch inch = new Inch(36.0);
+        double actualResult = inch.inchToYardConversion();
+        double expectedResult = 1;
+        Assertions.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void given1Yardand3Feet_WhenCompared_ShouldReturnEqual() {
+        Yard yard = new Yard(1.0);
+        double actualResult = yard.yardToFeetConversion();
+        double expectedResult = 3;
+        Assertions.assertEquals(actualResult, expectedResult);
     }
 }

@@ -1,26 +1,26 @@
 package quantitymeasurement;
 
-public class Inch {
+public class Yard {
 
     private final double value;
 
-    public Inch(double value) {
+    public Yard(double value) {
         this.value = value;
     }
 
-    public double inchToFeetConversion(){
-        return value / 12;
+    public double yardToFeetConversion(){
+        return value * 3;
     }
 
-    public double inchToYardConversion(){
-        return value / 36;
+    public double yardToInchConversion(){
+        return value * 36;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Inch inch = (Inch) o;
-        return Double.compare(inch.value, value) == 0;
+        Yard yard = (Yard) o;
+        return Double.compare(yard.value, value) == 0;
     }
 }
