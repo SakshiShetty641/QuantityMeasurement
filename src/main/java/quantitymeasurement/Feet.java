@@ -9,7 +9,7 @@ package quantitymeasurement;
 public class Feet {
     private final double value;
 
-    public Feet(double value){
+    public Feet(double value) {
         this.value = value;
     }
 
@@ -20,6 +20,4 @@ public class Feet {
         Feet feet = (Feet) o;
         return Double.compare(feet.value, value) == 0;
     }
-
-
 }
