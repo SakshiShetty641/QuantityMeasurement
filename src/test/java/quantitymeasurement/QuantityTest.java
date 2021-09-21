@@ -74,4 +74,20 @@ public class QuantityTest {
         Inch inch2 = new Inch(1.0);
         Assertions.assertNotEquals(inch1, inch2);
     }
+
+    @Test
+    public void given1Feetand12Inch_WhenCompared_ShouldReturnEqual(){
+        Feet feet1 = new Feet(1.0);
+        double actualResult = feet1.feetToInchConversion();
+        double expectedResult = 12;
+        Assertions.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void given2Feetand12Inch_WhenCompared_ShouldReturnNotEqual(){
+        Feet feet1 = new Feet(2.0);
+        double actualResult = feet1.feetToInchConversion();
+        double expectedResult = 12;
+        Assertions.assertNotEquals(actualResult, expectedResult);
+    }
 }
