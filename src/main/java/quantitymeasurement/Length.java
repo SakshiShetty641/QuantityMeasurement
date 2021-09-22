@@ -7,22 +7,27 @@ package quantitymeasurement;
  * @since - 2021-09-20
  */
 public class Length {
-    enum Unit{Feet, Inch};
-
+    enum Unit {Feet, Inch};
     private final Unit unit;
     private final double value;
 
+    private double Feet_To_Inch;
     public Length(Unit unit, double value) {
         this.value = value;
         this.unit = unit;
     }
 
-    public double feetToInchConversion(){
+    public double feetToInchConversion() {
         return value * 12;
     }
 
-    public double inchToFeetConversion(){
-        return value / 12;
+    public boolean compare(Length that) {
+        if (this.unit.equals(Unit.Feet) && that.unit.equals(Unit.Feet))
+            return Double.compare(this.value, that.value) == 0;
+        if (this.unit.equals(Unit.Feet) && that.unit.equals(Unit.Inch))
+            return Double.compare(this.value * Feet_To_Inch, that.value) == 0;
+        else
+            return false;
     }
 
     @Override
