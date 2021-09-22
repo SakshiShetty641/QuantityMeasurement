@@ -129,4 +129,27 @@ public class QuantityTest {
         boolean compareCheck = inch1.compare(inch2);
         Assertions.assertTrue(compareCheck);
     }
+
+    @Test
+    public void given0Yardand0Yard_ShouldReturnEqual() {
+        Length yard1 = new Length(Length.Unit.YARD,0.0);
+        Length yard2 = new Length(Length.Unit.YARD,0.0);
+        boolean compareCheck = yard1.compare(yard2);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    public void given0Yardand1Yard_ShouldReturnNotEqual() {
+        Length yard1 = new Length(Length.Unit.YARD,0.0);
+        Length yard2 = new Length(Length.Unit.YARD,1.0);
+        boolean compareCheck = yard1.compare(yard2);
+        Assertions.assertFalse(compareCheck);
+    }
+
+    @Test
+    public void given0YardandNullYard_ShouldReturnNotEqual() {
+        Length yard1 = new Length(Length.Unit.YARD,0.0);
+        Length yard2 = null;
+        Assertions.assertNotEquals(yard1, yard2);
+    }
 }
