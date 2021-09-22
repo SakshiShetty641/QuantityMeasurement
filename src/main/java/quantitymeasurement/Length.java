@@ -7,7 +7,7 @@ package quantitymeasurement;
  * @since - 2021-09-20
  */
 public class Length {
-    enum Unit {FEET, INCH, YARD, CENTIMETER}
+    enum Unit {FEET, INCH, YARD, CENTIMETER};
 
     private static final double YARD_TO_FEET = 3 ;
     private static final double FEET_TO_INCH = 12;
