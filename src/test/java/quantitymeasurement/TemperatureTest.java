@@ -39,4 +39,12 @@ public class TemperatureTest {
         Temperature temperature2 = new Temperature(Temperature.Unit.FAHRENHEIT, 1.0);
         Assertions.assertNotEquals(temperature1, temperature2);
     }
+
+    @Test
+    public void given212FahrenheitAnd100Celsius_WhenCompared_ShouldReturnEqualTemperature() {
+        Temperature fahrenheit = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
+        Temperature celsius = new Temperature(Temperature.Unit.CELSIUS, 100.0);
+        boolean compareCheck = fahrenheit.compare(celsius);
+        Assertions.assertTrue(compareCheck);
+    }
 }
