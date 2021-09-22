@@ -1,7 +1,7 @@
 package quantitymeasurement;
 
 public class Volume {
-    enum Unit {GALLON};
+    enum Unit {GALLON, LITRE};
 
     private final Unit unit;
     private final double value;
