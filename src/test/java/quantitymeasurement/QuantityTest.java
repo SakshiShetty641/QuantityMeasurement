@@ -223,4 +223,20 @@ public class QuantityTest {
         Length centimeter2 = null;
         Assertions.assertNotEquals(centimeter1, centimeter2);
     }
+
+    @Test
+    public void given2InchAnd5Centimeter_WhenCompared_ShouldReturnEqualLength() {
+        Length inch1 = new Length(Length.Unit.INCH, 2.0);
+        Length centimeter1 = new Length(Length.Unit.CENTIMETER, 5.0);
+        boolean compareCheck = inch1.compare(centimeter1);
+        Assertions.assertTrue(compareCheck);
+    }
+
+    @Test
+    void given5CentimeterAnd2Inch_WhenCompared_ShouldReturnEqualLength() {
+        Length centimeter1  = new Length(Length.Unit.CENTIMETER, 5.0);
+        Length inch1 = new Length(Length.Unit.INCH, 2.0);
+        boolean compareCheck = centimeter1 .compare(inch1);
+        Assertions.assertTrue(compareCheck);
+    }
 }
