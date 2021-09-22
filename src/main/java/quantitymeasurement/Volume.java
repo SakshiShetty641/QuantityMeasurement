@@ -1,9 +1,10 @@
 package quantitymeasurement;
 
 public class Volume {
-    private static final double GALLON_TO_LITRE = 3.78;
+    enum Unit {GALLON, LITRE, MILLILITRE};
 
-    enum Unit {GALLON, LITRE};
+    private static final double GALLON_TO_LITRE = 3.78;
+    private static final double LITRE_TO_MILLILITRE = 1000 ;
 
     private final Unit unit;
     private final double value;
@@ -20,6 +21,12 @@ public class Volume {
             return Double.compare(this.value * GALLON_TO_LITRE, that.value) == 0;
         if (this.unit.equals(Unit.LITRE) && that.unit.equals(Unit.GALLON))
             return Double.compare(this.value, that.value * GALLON_TO_LITRE) == 0;
+        if (this.unit.equals(Unit.MILLILITRE) && that.unit.equals(Unit.MILLILITRE))
+            return Double.compare(this.value, that.value) == 0;
+        if (this.unit.equals(Unit.LITRE) && that.unit.equals(Unit.MILLILITRE))
+            return Double.compare(this.value * LITRE_TO_MILLILITRE, that.value) == 0;
+        if (this.unit.equals(Unit.MILLILITRE) && that.unit.equals(Unit.LITRE))
+            return Double.compare(this.value, that.value * LITRE_TO_MILLILITRE) == 0;
         return false;
     }
 
