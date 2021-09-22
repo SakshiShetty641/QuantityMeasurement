@@ -81,4 +81,12 @@ public class QuantityTest {
         Length inch1 = new Length(Length.Unit.Inch,0.0);
         Assertions.assertNotEquals(feet1, inch1);
     }
+
+    @Test
+    public void given1Feetand12Inch_WhenCompared_ShouldReturnEqual() {
+        Length feet1 = new Length(Length.Unit.Feet,1.0);
+        double actualResult = feet1.feetToInchConversion();
+        double expectedResult = 12;
+        Assertions.assertEquals(actualResult, expectedResult);
+    }
 }
